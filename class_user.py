@@ -1,3 +1,5 @@
+from getpass import getpass as pas
+
 class User:
     username = ""
     password = ""
@@ -9,7 +11,7 @@ class User:
     
     def login(self):
         username = input("Enter username: ")
-        password = input("Enter password: ")
+        password = pas("Enter password: ")
         if(self.username == username and self.password == password):
             self.logged = True
             print("login success")
@@ -22,7 +24,11 @@ class User:
     def isLogged(self):
         return self.logged
     
-user1 = User("admin", "password")
+class Details(User):
+    def __init__(self, username, password):
+        super().__init__(username, password)
+    
+user1 = Details("admin", "password")
 
 while user1.isLogged() == False:
     user1.login()
@@ -30,6 +36,5 @@ while user1.isLogged() == False:
 input()
 
 
-        
-            
+
             
