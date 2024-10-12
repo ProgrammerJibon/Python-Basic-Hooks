@@ -30,6 +30,7 @@ datas.remove(10)
 
 # __len__ returns the size of array
 print(datas.__len__())
+print(len(datas))
 
 
 print(datas)
